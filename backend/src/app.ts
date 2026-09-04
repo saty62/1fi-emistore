@@ -27,10 +27,19 @@ export function createApp(): Express {
   app.use(
     cors({
       origin: (origin, callback) => {
-        // Allow requests with no origin (like mobile apps, curl, Postman)
         if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
           return callback(null, true);
         }
+
+        try {
+          const parsed = new URL(origin);
+          if (parsed.hostname.endsWith('.vercel.app') || parsed.hostname === 'vercel.app') {
+            return callback(null, true);
+          }
+        } catch {
+          // Invalid URL format
+        }
+
         return callback(new Error('Not allowed by CORS'));
       },
       credentials: true,
