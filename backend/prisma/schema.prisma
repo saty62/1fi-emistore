@@ -1,0 +1,65 @@
+// Prisma schema for 1Fi Dynamic Product & Mutual Fund EMI Application
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          String    @id @default(uuid())
+  slug        String    @unique
+  name        String
+  brand       String
+  description String
+  category    String    @default("smartphones")
+  mrp         Int
+  basePrice   Int
+  isNew       Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  variants    Variant[]
+  emiPlans    EmiPlan[]
+
+  @@index([slug])
+  @@index([brand])
+}
+
+model Variant {
+  id          String   @id @default(uuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  color       String
+  colorCode   String   @default("#000000") // Hex code for color swatch rendering
+  storage     String
+  mrp         Int?     // Variant-specific MRP if applicable
+  price       Int?     // Variant-specific price if applicable
+  imageUrl    String
+  available   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([productId])
+  @@index([productId, storage, color])
+}
+
+model EmiPlan {
+  id             String   @id @default(uuid())
+  productId      String
+  product        Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tenureMonths   Int
+  monthlyAmount  Int
+  interestRate   Float    @default(0.0)
+  cashbackAmount Int      @default(0)
+  processingFee  Int      @default(0)
+  isPopular      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([productId])
+  @@index([productId, tenureMonths])
+}

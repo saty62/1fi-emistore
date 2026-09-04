@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bodyGradSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="40%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <linearGradient id="frameGradSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="50%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+    <linearGradient id="cameraIslandSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="phoneShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.18" />
+    </filter>
+    <radialGradient id="lensGradSilver" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+  </defs>
+
+  <!-- Shadow & Phone Outer Frame -->
+  <rect x="70" y="40" width="260" height="520" rx="46" fill="url(#frameGradSilver)" filter="url(#phoneShadow)" />
+  <!-- Phone Inner Back Glass -->
+  <rect x="74" y="44" width="252" height="512" rx="42" fill="url(#bodyGradSilver)" />
+
+  <!-- Subtle Specular Sheen -->
+  <path d="M 74,86 C 160,86 280,180 326,300 L 326,44 L 116,44 Z" fill="white" opacity="0.3" />
+
+  <!-- Camera Plateau / Island -->
+  <rect x="92" y="64" width="136" height="142" rx="28" fill="url(#cameraIslandSilver)" stroke="#94A3B8" stroke-width="1.5" />
+
+  <!-- Lens 1 (Top Left) -->
+  <circle cx="128" cy="100" r="24" fill="#1E293B" stroke="#94A3B8" stroke-width="2.5" />
+  <circle cx="128" cy="100" r="17" fill="url(#lensGradSilver)" />
+  <circle cx="122" cy="94" r="5" fill="#38BDF8" opacity="0.6" />
+
+  <!-- Lens 2 (Bottom Left) -->
+  <circle cx="128" cy="170" r="24" fill="#1E293B" stroke="#94A3B8" stroke-width="2.5" />
+  <circle cx="128" cy="170" r="17" fill="url(#lensGradSilver)" />
+  <circle cx="122" cy="164" r="5" fill="#38BDF8" opacity="0.6" />
+
+  <!-- Lens 3 (Right Middle) -->
+  <circle cx="192" cy="135" r="24" fill="#1E293B" stroke="#94A3B8" stroke-width="2.5" />
+  <circle cx="192" cy="135" r="17" fill="url(#lensGradSilver)" />
+  <circle cx="186" cy="129" r="5" fill="#38BDF8" opacity="0.6" />
+
+  <!-- TrueTone Flash & LiDAR Sensor -->
+  <circle cx="192" cy="85" r="8" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5" />
+  <circle cx="192" cy="182" r="6" fill="#0F172A" />
+
+  <!-- Apple Brand Mark / Subtle Logo -->
+  <circle cx="200" cy="305" r="18" fill="#64748B" opacity="0.35" />
+  <circle cx="208" cy="300" r="14" fill="url(#bodyGradSilver)" />
+  <ellipse cx="200" cy="282" rx="4" ry="7" fill="#64748B" opacity="0.35" transform="rotate(30 200 282)" />
+</svg>

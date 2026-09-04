@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pixelBodyObsidian" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B2D30" />
+      <stop offset="50%" stop-color="#1C1D1F" />
+      <stop offset="100%" stop-color="#121314" />
+    </linearGradient>
+    <linearGradient id="pixelBarGradObsidian" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3F4246" />
+      <stop offset="50%" stop-color="#6B7280" />
+      <stop offset="100%" stop-color="#3F4246" />
+    </linearGradient>
+    <filter id="pixelShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Phone Frame with rounded 40px corners -->
+  <rect x="70" y="40" width="260" height="520" rx="40" fill="#4B5563" filter="url(#pixelShadow)" />
+  <rect x="74" y="44" width="252" height="512" rx="36" fill="url(#pixelBodyObsidian)" />
+
+  <path d="M 74,44 L 210,44 L 326,300 L 326,556 Z" fill="white" opacity="0.05" />
+
+  <!-- Iconic Pixel Camera Visor / Floating Island -->
+  <rect x="86" y="80" width="228" height="68" rx="34" fill="url(#pixelBarGradObsidian)" stroke="#9CA3AF" stroke-width="1.5" />
+  <!-- Glass Pill for Lenses -->
+  <rect x="96" y="88" width="144" height="52" rx="26" fill="#090A0C" />
+
+  <!-- Dual Lens Pill Capsule -->
+  <circle cx="128" cy="114" r="16" fill="#020617" stroke="#334155" stroke-width="2" />
+  <circle cx="128" cy="114" r="10" fill="#0F172A" />
+  <circle cx="124" cy="110" r="3" fill="#38BDF8" opacity="0.7" />
+
+  <!-- Telephoto Periscope Lens -->
+  <rect x="176" y="102" width="24" height="24" rx="6" fill="#020617" stroke="#334155" stroke-width="2" />
+  <circle cx="188" cy="114" r="7" fill="#0F172A" />
+
+  <!-- Flash & Temp Sensor on Right -->
+  <circle cx="276" cy="104" r="8" fill="#FEF08A" stroke="#CA8A04" stroke-width="1.5" />
+  <circle cx="276" cy="124" r="5" fill="#38BDF8" opacity="0.8" />
+
+  <!-- Google G Logo -->
+  <text x="200" y="320" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="white" opacity="0.25">G</text>
+</svg>

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: emistore-api
+    env: node
+    buildCommand: npm install && npm run prisma:generate && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: emistore-db
+          property: connectionString
+      - key: FRONTEND_URL
+        sync: false
+
+databases:
+  - name: emistore-db
+    databaseName: emistore
+    user: postgres
+    plan: free
