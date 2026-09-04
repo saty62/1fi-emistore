@@ -10,6 +10,13 @@
 
 A production-grade, full-stack web application built for the **1Fi SDE1 Assignment**. The platform renders dynamic flagship smartphone product pages with customizable variants (storage and finishes) and flexible EMI plans backed by mutual funds. All data is dynamically queried from a normalized PostgreSQL database via an Express REST API with zero hardcoded values in the frontend.
 
+### 🌐 Live Deployment Links
+- **Live Frontend Application**: [https://1fi-emistore.vercel.app](https://1fi-emistore.vercel.app)
+- **Live Backend API Health**: [https://onefi-emistore.onrender.com/api/health](https://onefi-emistore.onrender.com/api/health)
+- **Live Products API**: [https://onefi-emistore.onrender.com/api/products](https://onefi-emistore.onrender.com/api/products)
+- **GitHub Repository**: [https://github.com/saty62/1fi-emistore](https://github.com/saty62/1fi-emistore)
+- **Cloud Database**: PostgreSQL hosted on [Neon Serverless Cloud](https://neon.tech)
+
 ---
 
 ## Table of Contents
@@ -368,7 +375,7 @@ All responses follow a consistent standard:
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone https://github.com/your-username/1fi-emistore.git
+git clone https://github.com/saty62/1fi-emistore.git
 cd 1fi-emistore
 
 # Install root, backend, and frontend packages
